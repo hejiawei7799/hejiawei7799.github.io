@@ -1,19 +1,1625 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RockBase — The growth cornerstone in the AI era. Global market expansion for AI products." />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RockBase — The Growth Cornerstone in the AI Era. We scale AI products globally through data-driven strategies and cross-cultural expertise.">
+    <meta name="keywords" content="AI growth, global expansion, influencer marketing, SEO, ASO, GEO, CRO, TikTok growth, community operations">
+    <meta name="author" content="RockBase Studio">
+    <meta property="og:title" content="RockBase — The Growth Cornerstone in the AI Era">
+    <meta property="og:description" content="We scale AI products globally through data-driven strategies and cross-cultural expertise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rockbase.pro">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://rockbase.pro">
     <title>RockBase — The Growth Cornerstone in the AI Era</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-tertiary: #1a1a24;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #606070;
+            --accent: #ff6b35;
+            --accent-glow: rgba(255, 107, 53, 0.3);
+            --accent-secondary: #00d4aa;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.15);
+            --gradient-1: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffb347 100%);
+            --gradient-2: linear-gradient(135deg, #00d4aa 0%, #00a8e8 100%);
+            --gradient-3: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        ::selection { background: var(--accent); color: var(--bg-primary); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+        /* NAVIGATION */
+        .nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: transparent;
+        }
+        .nav.scrolled {
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            padding: 1rem 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; cursor: pointer; }
+        .nav-logo-icon { width: 40px; height: 40px; position: relative; }
+        .nav-logo-icon svg { width: 100%; height: 100%; }
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em;
+        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;
+            font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+            position: relative; transition: color 0.3s ease; padding: 0.5rem 0;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 1px; background: var(--accent);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            padding: 0.75rem 1.5rem; background: var(--gradient-1); color: var(--bg-primary);
+            font-weight: 600; font-size: 0.875rem; border: none; border-radius: 100px;
+            cursor: pointer; transition: all 0.3s ease;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 40px var(--accent-glow); }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh; position: relative;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            overflow: hidden; padding: 8rem 4rem 4rem;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; }
+        .hero-bg-gradient {
+            position: absolute; inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 212, 170, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; }
+        .hero-tagline {
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 2rem;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.2s forwards;
+        }
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem); font-weight: 700;
+            line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+            opacity: 0; transform: translateY(30px);
+            animation: fadeInUp 0.8s 0.4s forwards;
+        }
+        .hero-title .highlight {
+            background: var(--gradient-1); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem; color: var(--text-secondary);
+            max-width: 600px; margin: 0 auto 3rem; line-height: 1.7;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.6s forwards;
+        }
+        .hero-cta-group {
+            display: flex; gap: 1rem; justify-content: center;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.8s forwards;
+        }
+        .hero-cta-primary {
+            padding: 1rem 2.5rem; background: var(--gradient-1); color: var(--bg-primary);
+            font-weight: 600; font-size: 0.9375rem; border: none; border-radius: 100px;
+            cursor: pointer; transition: all 0.3s ease;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .hero-cta-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 50px var(--accent-glow); }
+        .hero-cta-secondary {
+            padding: 1rem 2.5rem; background: transparent; color: var(--text-primary);
+            font-weight: 600; font-size: 0.9375rem; border: 1px solid var(--border-hover);
+            border-radius: 100px; cursor: pointer; transition: all 0.3s ease;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .hero-cta-secondary:hover { border-color: var(--accent); color: var(--accent); }
+        .hero-scroll {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+            opacity: 0; animation: fadeIn 1s 1.5s forwards;
+        }
+        .hero-scroll-text { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+        .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+        @keyframes scrollPulse { 0%, 100% { opacity: 0.3; height: 40px; } 50% { opacity: 1; height: 60px; } }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { to { opacity: 1; } }
+        #particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+
+        /* SECTION COMMON */
+        .section { padding: 8rem 4rem; position: relative; }
+        .section-header { margin-bottom: 4rem; }
+        .section-label {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .section-label::before { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700;
+            line-height: 1.1; letter-spacing: -0.02em; max-width: 700px;
+        }
+        .section-desc { color: var(--text-secondary); font-size: 1.125rem; max-width: 600px; margin-top: 1.5rem; line-height: 1.7; }
+
+        /* PORTFOLIO */
+        .portfolio { background: var(--bg-secondary); overflow: hidden; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .portfolio-item {
+            position: relative; aspect-ratio: 16/10; border-radius: 16px;
+            overflow: hidden; cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--border);
+        }
+        .portfolio-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--border-hover);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+        .portfolio-item-bg { position: absolute; inset: 0; background: var(--bg-tertiary); transition: all 0.5s ease; }
+        .portfolio-item:hover .portfolio-item-bg { background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(255, 107, 53, 0.1) 100%); }
+        .portfolio-item-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; z-index: 2; }
+        .portfolio-item-logo {
+            width: 48px; height: 48px; border-radius: 12px; background: var(--gradient-1);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1rem; font-weight: 700; font-size: 1.25rem; color: white;
+        }
+        .portfolio-item:nth-child(2) .portfolio-item-logo { background: var(--gradient-2); }
+        .portfolio-item:nth-child(3) .portfolio-item-logo { background: var(--gradient-3); }
+        .portfolio-item:nth-child(4) .portfolio-item-logo { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .portfolio-item:nth-child(5) .portfolio-item-logo { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .portfolio-item:nth-child(6) .portfolio-item-logo { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .portfolio-item-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .portfolio-item-url { font-size: 0.8125rem; color: var(--text-muted); font-family: 'Space Grotesk', sans-serif; }
+        .portfolio-item-desc { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.5; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
+        .portfolio-item:hover .portfolio-item-desc { opacity: 1; transform: translateY(0); }
+        .portfolio-item-shine { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.03) 45%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 55%, transparent 60%); transform: translateX(-100%); transition: transform 0.6s ease; }
+        .portfolio-item:hover .portfolio-item-shine { transform: translateX(100%); }
+
+        /* SERVICES */
+        .services { background: var(--bg-primary); }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .service-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2.5rem; cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 3px; background: var(--gradient-1);
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+        .service-card-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--bg-tertiary); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; transition: all 0.3s ease; }
+        .service-card:hover .service-card-icon { background: var(--accent); transform: scale(1.1) rotate(-5deg); }
+        .service-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .service-card-desc { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; }
+        .service-card-items { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+        .service-tag { padding: 0.375rem 0.875rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 100px; font-size: 0.8125rem; color: var(--text-secondary); transition: all 0.3s ease; }
+        .service-card:hover .service-tag { border-color: var(--accent); color: var(--accent); }
+
+        /* CASE STUDIES - HORIZONTAL SCROLL */
+        .cases { background: var(--bg-secondary); overflow: hidden; }
+        .cases-scroll-container { margin-top: 3rem; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; padding-bottom: 2rem; }
+        .cases-scroll-container::-webkit-scrollbar { display: none; }
+        .cases-scroll-container:active { cursor: grabbing; }
+        .cases-track { display: flex; gap: 2rem; width: max-content; padding: 0 4rem; }
+        .case-card {
+            width: 500px; flex-shrink: 0; background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 24px; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer;
+        }
+        .case-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
+        .case-card-image { width: 100%; height: 280px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); position: relative; overflow: hidden; }
+        .case-card-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-primary) 0%, transparent 50%); }
+        .case-card-image-content { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; color: rgba(255, 255, 255, 0.05); letter-spacing: 0.1em; }
+        .case-card-body { padding: 2rem; }
+        .case-card-client { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+        .case-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+        .case-card-stats { display: flex; gap: 2rem; margin-bottom: 1rem; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .case-stat { display: flex; flex-direction: column; }
+        .case-stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+        .case-stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem; }
+        .case-card-desc { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; }
+
+        /* SOCIAL PROOF - STACKED CARDS */
+        .social-proof { background: var(--bg-primary); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .social-cards { position: relative; width: 100%; max-width: 600px; margin: 3rem auto 0; height: 500px; perspective: 1000px; }
+        .social-card {
+            position: absolute; width: 100%; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 2.5rem;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .social-card:nth-child(1) { transform: translateY(0) rotate(-2deg); z-index: 5; }
+        .social-card:nth-child(2) { transform: translateY(20px) rotate(1deg); z-index: 4; }
+        .social-card:nth-child(3) { transform: translateY(40px) rotate(-1deg); z-index: 3; }
+        .social-card:nth-child(4) { transform: translateY(60px) rotate(2deg); z-index: 2; }
+        .social-card:nth-child(5) { transform: translateY(80px) rotate(-1.5deg); z-index: 1; }
+        .social-card:hover { transform: translateY(-10px) rotate(0deg) scale(1.05) !important; z-index: 10 !important; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); border-color: var(--accent); }
+        .social-card-source { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .social-card-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; }
+        .social-card-meta { display: flex; flex-direction: column; }
+        .social-card-name { font-weight: 600; font-size: 0.9375rem; }
+        .social-card-handle { font-size: 0.8125rem; color: var(--text-muted); }
+        .social-card-text { font-size: 1rem; line-height: 1.7; color: var(--text-secondary); font-style: italic; }
+        .social-card-date { margin-top: 1.5rem; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* DIFFERENTIATED APPROACH */
+        .approach { background: var(--bg-secondary); }
+        .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .approach-card {
+            background: var(--bg-primary); border: 1px solid var(--border); border-radius: 24px;
+            padding: 3rem 2.5rem; position: relative; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .approach-card::after { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255, 107, 53, 0.05) 0%, transparent 70%); transition: all 0.5s ease; }
+        .approach-card:hover::after { top: -30%; right: -30%; }
+        .approach-card:hover { border-color: var(--accent); transform: translateY(-8px); }
+        .approach-number { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 700; color: rgba(255, 255, 255, 0.05); position: absolute; top: 1rem; right: 1.5rem; line-height: 1; }
+        .approach-icon { width: 64px; height: 64px; border-radius: 20px; background: var(--bg-tertiary); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 2rem; position: relative; z-index: 1; transition: all 0.3s ease; }
+        .approach-card:hover .approach-icon { background: var(--accent); transform: rotate(-10deg) scale(1.1); }
+        .approach-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.375rem; font-weight: 600; margin-bottom: 1rem; position: relative; z-index: 1; }
+        .approach-desc { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.7; position: relative; z-index: 1; }
+
+        /* ARTICLES */
+        .articles { background: var(--bg-primary); }
+        .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .article-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; }
+        .article-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+        .article-image { width: 100%; height: 200px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); position: relative; overflow: hidden; }
+        .article-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-secondary) 0%, transparent 60%); }
+        .article-image-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 700; color: rgba(255, 255, 255, 0.03); }
+        .article-body { padding: 1.5rem; }
+        .article-tag { display: inline-block; padding: 0.25rem 0.75rem; background: var(--bg-tertiary); border-radius: 100px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+        .article-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.125rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.75rem; }
+        .article-excerpt { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .article-date { font-size: 0.8125rem; color: var(--text-muted); }
+        .article-read { font-size: 0.8125rem; color: var(--accent); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* CONTACT */
+        .contact { background: var(--bg-secondary); text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .contact-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .contact-title .highlight { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .contact-subtitle { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; }
+        .contact-email { display: inline-flex; align-items: center; gap: 1rem; padding: 1.25rem 2.5rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-size: 1.125rem; color: var(--text-primary); text-decoration: none; transition: all 0.3s ease; margin-bottom: 2rem; }
+        .contact-email:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 40px rgba(255, 107, 53, 0.1); }
+        .contact-cta { padding: 1.25rem 3rem; background: var(--gradient-1); color: var(--bg-primary); font-weight: 700; font-size: 1rem; border: none; border-radius: 100px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; }
+        .contact-cta:hover { transform: translateY(-3px); box-shadow: 0 20px 60px var(--accent-glow); }
+
+        /* FOOTER */
+        .footer { background: var(--bg-primary); border-top: 1px solid var(--border); padding: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+        .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
+        .footer-desc { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; max-width: 300px; }
+        .footer-social { display: flex; gap: 1rem; margin-top: 1rem; }
+        .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; font-size: 0.875rem; }
+        .footer-social a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
+        .footer-col-title { font-family: 'Space Grotesk', sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 1.5rem; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9375rem; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .footer-copyright { font-size: 0.8125rem; color: var(--text-muted); }
+        .footer-location { font-size: 0.8125rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+
+        /* SERVICE DETAIL */
+        .service-detail { background: var(--bg-primary); padding: 6rem 4rem; }
+        .service-detail:nth-child(even) { background: var(--bg-secondary); }
+        .service-detail-header { display: flex; align-items: flex-start; gap: 3rem; margin-bottom: 3rem; }
+        .service-detail-number { font-family: 'Space Grotesk', sans-serif; font-size: 5rem; font-weight: 700; color: var(--accent); line-height: 1; opacity: 0.3; }
+        .service-detail-title-group { flex: 1; }
+        .service-detail-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+        .service-detail-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .service-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-left: calc(5rem + 3rem); }
+        .service-detail-card { background: var(--bg-primary); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
+        .service-detail-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .service-detail-card:nth-child(even) { background: var(--bg-secondary); }
+        .service-detail-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+        .service-detail-card p, .service-detail-card ul { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.7; }
+        .service-detail-card ul { list-style: none; padding: 0; }
+        .service-detail-card ul li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        .service-detail-card ul li::before { content: '->'; position: absolute; left: 0; color: var(--accent); }
+
+        /* RESULTS */
+        .results { background: var(--bg-primary); }
+        .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+        .result-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: all 0.5s ease; }
+        .result-card:hover { border-color: var(--border-hover); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+        .result-card-image { width: 100%; height: 240px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); position: relative; display: flex; align-items: center; justify-content: center; }
+        .result-card-image-text { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; color: rgba(255, 255, 255, 0.08); letter-spacing: 0.1em; }
+        .result-card-body { padding: 2rem; }
+        .result-card-client { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+        .result-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+        .result-card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 12px; }
+        .result-stat { text-align: center; }
+        .result-stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+        .result-stat-label { font-size: 0.6875rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem; }
+        .result-card-desc { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.7; }
+
+        /* ABOUT */
+        .about { background: var(--bg-secondary); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-visual { position: relative; height: 500px; border-radius: 24px; overflow: hidden; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%); }
+        .about-visual::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(0, 212, 170, 0.08) 0%, transparent 50%); }
+        .about-visual-content { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 8rem; font-weight: 700; color: rgba(255, 255, 255, 0.03); letter-spacing: 0.05em; z-index: 1; }
+        .about-content { display: flex; flex-direction: column; gap: 2rem; }
+        .about-text { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.8; }
+        .about-text strong { color: var(--text-primary); font-weight: 600; }
+        .about-values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1rem; }
+        .about-value { padding: 1.5rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s ease; }
+        .about-value:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .about-value-number { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+        .about-value-label { font-size: 0.875rem; color: var(--text-secondary); }
+
+        /* STUDIO */
+        .studio { background: var(--bg-primary); text-align: center; }
+        .studio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
+        .studio-item { aspect-ratio: 1; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; transition: all 0.5s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .studio-item::before { content: ''; position: absolute; inset: 0; background: var(--gradient-1); opacity: 0; transition: opacity 0.5s ease; }
+        .studio-item:hover::before { opacity: 0.1; }
+        .studio-item:hover { border-color: var(--accent); transform: translateY(-8px) scale(1.02); }
+        .studio-item-icon { font-size: 2.5rem; position: relative; z-index: 1; transition: transform 0.3s ease; }
+        .studio-item:hover .studio-item-icon { transform: scale(1.2) rotate(-10deg); }
+        .studio-item-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.9375rem; font-weight: 600; position: relative; z-index: 1; }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* MARQUEE */
+        .marquee { overflow: hidden; white-space: nowrap; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 4rem 0; }
+        .marquee-track { display: inline-flex; animation: marquee 30s linear infinite; }
+        .marquee-item { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 500; color: var(--text-muted); padding: 0 3rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 1rem; }
+        .marquee-item::after { content: '•'; color: var(--accent); font-size: 0.5rem; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .portfolio-grid, .approach-grid, .articles-grid { grid-template-columns: repeat(2, 1fr); }
+            .service-detail-grid, .results-grid { grid-template-columns: 1fr; margin-left: 0; }
+            .service-detail-header { flex-direction: column; gap: 1rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .studio-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .section { padding: 4rem 1.5rem; }
+            .portfolio-grid, .services-grid, .approach-grid, .articles-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .studio-grid { grid-template-columns: repeat(2, 1fr); }
+            .case-card { width: 320px; }
+            .social-cards { height: 400px; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+        }
+        .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { width: 24px; height: 2px; background: var(--text-primary); transition: all 0.3s ease; }
+        @media (max-width: 768px) { .mobile-menu-btn { display: flex; } }
+
+        /* CURSOR GLOW */
+        .cursor-glow { position: fixed; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%); pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: opacity 0.3s ease; opacity: 0; }
+        @media (pointer: fine) { .cursor-glow { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#home" class="nav-logo">
+            <div class="nav-logo-icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="rocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff6b35"/>
+                            <stop offset="100%" style="stop-color:#ffb347"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M8 32V8h12c4 0 7 2 7 6s-3 6-7 6H12v12H8z" stroke="url(#rocketGrad)" stroke-width="2" fill="none"/>
+                    <path d="M12 20h8c2 0 3-1 3-3s-1-3-3-3h-8v6z" fill="url(#rocketGrad)" opacity="0.3"/>
+                    <path d="M22 8l6-4v12l-6-4z" fill="url(#rocketGrad)"/>
+                    <path d="M22 8l-2 4h4l-2-4z" fill="#ff8c42"/>
+                    <path d="M22 16c-2 4-2 8 0 12c2-4 2-8 0-12z" fill="#ff6b35" opacity="0.8">
+                        <animate attributeName="d" values="M22 16c-2 4-2 8 0 12c2-4 2-8 0-12z;M22 16c-3 4-1 8 0 12c1-4 3-8 0-12z;M22 16c-2 4-2 8 0 12c2-4 2-8 0-12z" dur="0.5s" repeatCount="indefinite"/>
+                    </path>
+                    <ellipse cx="20" cy="20" rx="16" ry="6" stroke="url(#rocketGrad)" stroke-width="0.5" fill="none" opacity="0.3" transform="rotate(-30 20 20)"/>
+                </svg>
+            </div>
+            <span class="nav-logo-text">RockBase</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#results">Result</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#studio">Studio</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-grid"></div>
+            <canvas id="particleCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-tagline">The Growth Cornerstone in the AI Era</div>
+            <h1 class="hero-title">
+                We Scale<br>
+                <span class="highlight">AI Products</span><br>
+                Globally
+            </h1>
+            <p class="hero-subtitle">
+                In a market where new AI products emerge every week, having a great feature is no longer enough. 
+                We are the professional team dedicated to global market expansion.
+            </p>
+            <div class="hero-cta-group">
+                <button class="hero-cta-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
+                <button class="hero-cta-secondary" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">View Results</button>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span class="hero-scroll-text">Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">AI Products We've Accelerated</h2>
+            <p class="section-desc">From early-stage startups to established platforms, we partner with visionary AI products ready for global scale.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item reveal">
+                <div class="portfolio-item-bg"></div>
+                <div class="portfolio-item-shine"></div>
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-logo">A</div>
+                    <div class="portfolio-item-name">Airtap</div>
+                    <div class="portfolio-item-url">airtap.ai</div>
+                    <div class="portfolio-item-desc">AI Agent controlling smartphones to complete tasks — auto-posting, smart home, bookings.</div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal reveal-delay-1">
+                <div class="portfolio-item-bg"></div>
+                <div class="portfolio-item-shine"></div>
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-logo">T</div>
+                    <div class="portfolio-item-name">Ticnote</div>
+                    <div class="portfolio-item-url">ticnote.com</div>
+                    <div class="portfolio-item-desc">AI note-taking and transcription across 7+ languages with auto-summaries and mind maps.</div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal reveal-delay-2">
+                <div class="portfolio-item-bg"></div>
+                <div class="portfolio-item-shine"></div>
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-logo">L</div>
+                    <div class="portfolio-item-name">Leadde</div>
+                    <div class="portfolio-item-url">leadde.ai</div>
+                    <div class="portfolio-item-desc">AI business video platform trusted by Fortune 500 — 300+ avatars, 175+ languages.</div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal reveal-delay-3">
+                <div class="portfolio-item-bg"></div>
+                <div class="portfolio-item-shine"></div>
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-logo">V</div>
+                    <div class="portfolio-item-name">Vomo</div>
+                    <div class="portfolio-item-url">vomo.ai</div>
+                    <div class="portfolio-item-desc">99.9% accuracy meeting recorder across 50+ languages with speaker identification.</div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal reveal-delay-1">
+                <div class="portfolio-item-bg"></div>
+                <div class="portfolio-item-shine"></div>
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-logo">A</div>
+                    <div class="portfolio-item-name">Allyhub</div>
+                    <div class="portfolio-item-url">allyhub.ai</div>
+                    <div class="portfolio-item-desc">Browser-native AI Agent with three-layer memory system for smarter, cheaper automation.</div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal reveal-delay-2">
+                <div class="portfolio-item-bg"></div>
+                <div class="portfolio-item-shine"></div>
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-logo">B</div>
+                    <div class="portfolio-item-name">BeFreed</div>
+                    <div class="portfolio-item-url">befreed.ai</div>
+                    <div class="portfolio-item-desc">AI micro-learning platform transforming books into podcasts, flashcards, and summaries.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">Growth Strategy</span>
+            <span class="marquee-item">Influencer Marketing</span>
+            <span class="marquee-item">Community Operations</span>
+            <span class="marquee-item">TikTok Growth</span>
+            <span class="marquee-item">SEO</span>
+            <span class="marquee-item">ASO</span>
+            <span class="marquee-item">GEO</span>
+            <span class="marquee-item">CRO</span>
+            <span class="marquee-item">Global Expansion</span>
+            <span class="marquee-item">AI Native</span>
+            <span class="marquee-item">Growth Strategy</span>
+            <span class="marquee-item">Influencer Marketing</span>
+            <span class="marquee-item">Community Operations</span>
+            <span class="marquee-item">TikTok Growth</span>
+            <span class="marquee-item">SEO</span>
+            <span class="marquee-item">ASO</span>
+            <span class="marquee-item">GEO</span>
+            <span class="marquee-item">CRO</span>
+            <span class="marquee-item">Global Expansion</span>
+            <span class="marquee-item">AI Native</span>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="section-header">
+            <div class="section-label">Our Services</div>
+            <h2 class="section-title">Full-Funnel Growth Engine for AI Products</h2>
+            <p class="section-desc">From strategy to execution, we build scalable growth systems that compound over time.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-card-icon">&#127919;</div>
+                <h3 class="service-card-title">Growth Strategy</h3>
+                <p class="service-card-desc">Overseas Growth Strategies — market positioning, audience profiling, and conversion pathway optimization.</p>
+                <div class="service-card-items">
+                    <span class="service-tag">Market Research</span>
+                    <span class="service-tag">GTM Planning</span>
+                    <span class="service-tag">Positioning</span>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-card-icon">&#128226;</div>
+                <h3 class="service-card-title">Influencer Marketing</h3>
+                <p class="service-card-desc">High-affinity influencer matching across global platforms with localized campaigns and performance tracking.</p>
+                <div class="service-card-items">
+                    <span class="service-tag">KOL Matching</span>
+                    <span class="service-tag">Campaign Mgmt</span>
+                    <span class="service-tag">Performance</span>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-card-icon">&#128101;</div>
+                <h3 class="service-card-title">Community Operations</h3>
+                <p class="service-card-desc">End-to-end overseas social media operations across Reddit, Discord, and major global platforms.</p>
+                <div class="service-card-items">
+                    <span class="service-tag">Reddit</span>
+                    <span class="service-tag">Discord</span>
+                    <span class="service-tag">Content Ops</span>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-3">
+                <div class="service-card-icon">&#127908;</div>
+                <h3 class="service-card-title">TikTok Growth</h3>
+                <p class="service-card-desc">Comprehensive UGC strategy and execution for organic growth on short-video platforms.</p>
+                <div class="service-card-items">
+                    <span class="service-tag">UGC Strategy</span>
+                    <span class="service-tag">Matrix Accounts</span>
+                    <span class="service-tag">Viral Content</span>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-card-icon">&#128269;</div>
+                <h3 class="service-card-title">Growth Search</h3>
+                <p class="service-card-desc">SEO, ASO, and GEO — optimizing visibility across traditional search, app stores, and generative AI platforms.</p>
+                <div class="service-card-items">
+                    <span class="service-tag">SEO</span>
+                    <span class="service-tag">ASO</span>
+                    <span class="service-tag">GEO</span>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-card-icon">&#128200;</div>
+                <h3 class="service-card-title">CRO</h3>
+                <p class="service-card-desc">Conversion Rate Optimization — data-driven iterative refinement to maximize revenue from existing traffic.</p>
+                <div class="service-card-items">
+                    <span class="service-tag">A/B Testing</span>
+                    <span class="service-tag">Funnel Opt</span>
+                    <span class="service-tag">Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies - Horizontal Scroll -->
+    <section class="section cases" id="cases">
+        <div class="section-header">
+            <div class="section-label">Featured Cases</div>
+            <h2 class="section-title">Results That Speak</h2>
+            <p class="section-desc">Scroll to explore our most impactful growth stories.</p>
+        </div>
+        <div class="cases-scroll-container" id="casesScroll">
+            <div class="cases-track">
+                <div class="case-card">
+                    <div class="case-card-image">
+                        <div class="case-card-image-content">AIRTAP</div>
+                    </div>
+                    <div class="case-card-body">
+                        <div class="case-card-client">Case Study 01</div>
+                        <h3 class="case-card-title">Airtap: From Zero to 50K Users in 90 Days</h3>
+                        <div class="case-card-stats">
+                            <div class="case-stat">
+                                <span class="case-stat-value">50K</span>
+                                <span class="case-stat-label">Users</span>
+                            </div>
+                            <div class="case-stat">
+                                <span class="case-stat-value">340%</span>
+                                <span class="case-stat-label">Growth</span>
+                            </div>
+                            <div class="case-stat">
+                                <span class="case-stat-value">$12</span>
+                                <span class="case-stat-label">CAC</span>
+                            </div>
+                        </div>
+                        <p class="case-card-desc">Strategic TikTok UGC campaign combined with Reddit community seeding drove exponential organic growth for this AI smartphone agent.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-card-image">
+                        <div class="case-card-image-content">LEADDE</div>
+                    </div>
+                    <div class="case-card-body">
+                        <div class="case-card-client">Case Study 02</div>
+                        <h3 class="case-card-title">Leadde: Enterprise SEO Dominance</h3>
+                        <div class="case-card-stats">
+                            <div class="case-stat">
+                                <span class="case-stat-value">3.2M</span>
+                                <span class="case-stat-label">Monthly Views</span>
+                            </div>
+                            <div class="case-stat">
+                                <span class="case-stat-value">#1</span>
+                                <span class="case-stat-label">Ranking</span>
+                            </div>
+                            <div class="case-stat">
+                                <span class="case-stat-value">180%</span>
+                                <span class="case-stat-label">MRR Growth</span>
+                            </div>
+                        </div>
+                        <p class="case-card-desc">Full-funnel SEO + GEO strategy positioned Leadde as the top AI video platform in enterprise search, capturing Fortune 500 decision-makers.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-card-image">
+                        <div class="case-card-image-content">VOMO</div>
+                    </div>
+                    <div class="case-card-body">
+                        <div class="case-card-client">Case Study 03</div>
+                        <h3 class="case-card-title">Vomo: Global Influencer Network Launch</h3>
+                        <div class="case-card-stats">
+                            <div class="case-stat">
+                                <span class="case-stat-value">200+</span>
+                                <span class="case-stat-label">Influencers</span>
+                            </div>
+                            <div class="case-stat">
+                                <span class="case-stat-value">15M</span>
+                                <span class="case-stat-label">Impressions</span>
+                            </div>
+                            <div class="case-stat">
+                                <span class="case-stat-value">4.8x</span>
+                                <span class="case-stat-label">ROI</span>
+                            </div>
+                        </div>
+                        <p class="case-card-desc">Localized influencer campaigns across 6 markets (US, EU, JP, KR, LATAM, MENA) established Vomo as the go-to AI transcription tool globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof - Stacked Cards -->
+    <section class="section social-proof" id="social-proof">
+        <div class="section-header" style="text-align: center;">
+            <div class="section-label" style="justify-content: center;">Social Proof</div>
+            <h2 class="section-title" style="max-width: 100%;">What Partners Say</h2>
+        </div>
+        <div class="social-cards">
+            <div class="social-card">
+                <div class="social-card-source">
+                    <div class="social-card-avatar">T</div>
+                    <div class="social-card-meta">
+                        <span class="social-card-name">TechCrunch</span>
+                        <span class="social-card-handle">@TechCrunch</span>
+                    </div>
+                </div>
+                <p class="social-card-text">"RockBase has redefined how AI startups approach global expansion. Their data-driven methodology and cross-cultural expertise are unmatched in the industry."</p>
+                <div class="social-card-date">March 2026</div>
+            </div>
+            <div class="social-card">
+                <div class="social-card-source">
+                    <div class="social-card-avatar">A</div>
+                    <div class="social-card-meta">
+                        <span class="social-card-name">Airtap Team</span>
+                        <span class="social-card-handle">@airtap_ai</span>
+                    </div>
+                </div>
+                <p class="social-card-text">"Working with RockBase felt like adding a world-class growth team overnight. They understood our product deeply and delivered results beyond our projections."</p>
+                <div class="social-card-date">February 2026</div>
+            </div>
+            <div class="social-card">
+                <div class="social-card-source">
+                    <div class="social-card-avatar">V</div>
+                    <div class="social-card-meta">
+                        <span class="social-card-name">Vomo Leadership</span>
+                        <span class="social-card-handle">@vomo_ai</span>
+                    </div>
+                </div>
+                <p class="social-card-text">"The influencer network RockBase built for us across 6 markets was nothing short of remarkable. Our global user acquisition costs dropped by 60%."</p>
+                <div class="social-card-date">January 2026</div>
+            </div>
+            <div class="social-card">
+                <div class="social-card-source">
+                    <div class="social-card-avatar">L</div>
+                    <div class="social-card-meta">
+                        <span class="social-card-name">Leadde CMO</span>
+                        <span class="social-card-handle">@leadde_ai</span>
+                    </div>
+                </div>
+                <p class="social-card-text">"Their SEO and GEO strategy transformed our organic acquisition. We went from invisible to ranking #1 for enterprise AI video keywords in under 6 months."</p>
+                <div class="social-card-date">December 2025</div>
+            </div>
+            <div class="social-card">
+                <div class="social-card-source">
+                    <div class="social-card-avatar">W</div>
+                    <div class="social-card-meta">
+                        <span class="social-card-name">Wired Magazine</span>
+                        <span class="social-card-handle">@Wired</span>
+                    </div>
+                </div>
+                <p class="social-card-text">"RockBase represents the new breed of growth agencies — AI-native, globally minded, and obsessively focused on measurable outcomes for their clients."</p>
+                <div class="social-card-date">November 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiated Approach -->
+    <section class="section approach" id="approach">
+        <div class="section-header">
+            <div class="section-label">Why RockBase</div>
+            <h2 class="section-title">Differentiated Approach to Growth</h2>
+            <p class="section-desc">Three pillars that define how we build sustainable growth for AI products.</p>
+        </div>
+        <div class="approach-grid">
+            <div class="approach-card reveal">
+                <div class="approach-number">01</div>
+                <div class="approach-icon">&#128640;</div>
+                <h3 class="approach-title">Full-Funnel Growth System</h3>
+                <p class="approach-desc">Extensive empirical expertise in end-to-end globalization of AI products, encompassing content expansion, user acquisition, and commercial monetization.</p>
+            </div>
+            <div class="approach-card reveal reveal-delay-1">
+                <div class="approach-number">02</div>
+                <div class="approach-icon">&#128200;</div>
+                <h3 class="approach-title">Performance-Driven Architecture</h3>
+                <p class="approach-desc">Augments growth capabilities via performance-oriented methodologies, driving both user acquisition and revenue optimization to construct a durable, compounding growth framework.</p>
+            </div>
+            <div class="approach-card reveal reveal-delay-2">
+                <div class="approach-number">03</div>
+                <div class="approach-icon">&#127757;</div>
+                <h3 class="approach-title">Cross-Cultural Expertise</h3>
+                <p class="approach-desc">Spearheaded localized growth and brand marketing across European, American, Latin American, Middle Eastern, Japanese, and South Korean markets with a proprietary influencer, media, and community network.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="section articles" id="articles">
+        <div class="section-header">
+            <div class="section-label">Insights</div>
+            <h2 class="section-title">Latest from the Studio</h2>
+            <p class="section-desc">Thoughts on AI growth, global expansion, and the future of digital marketing.</p>
+        </div>
+        <div class="articles-grid">
+            <div class="article-card reveal">
+                <div class="article-image">
+                    <div class="article-image-placeholder">GEO</div>
+                </div>
+                <div class="article-body">
+                    <span class="article-tag">Strategy</span>
+                    <h3 class="article-title">Why GEO Is the New SEO for AI Products</h3>
+                    <p class="article-excerpt">As users increasingly rely on AI platforms for recommendations, traditional SEO has become insufficient. Here is how to optimize for generative engines.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Jul 15, 2026</span>
+                        <span class="article-read">Read &rarr;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="article-card reveal reveal-delay-1">
+                <div class="article-image">
+                    <div class="article-image-placeholder">UGC</div>
+                </div>
+                <div class="article-body">
+                    <span class="article-tag">TikTok</span>
+                    <h3 class="article-title">The UGC Playbook for AI SaaS on TikTok</h3>
+                    <p class="article-excerpt">How we built a matrix of authentic creator accounts that drove 300% organic growth for AI products without paid ads.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Jul 8, 2026</span>
+                        <span class="article-read">Read &rarr;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="article-card reveal reveal-delay-2">
+                <div class="article-image">
+                    <div class="article-image-placeholder">CRO</div>
+                </div>
+                <div class="article-body">
+                    <span class="article-tag">Conversion</span>
+                    <h3 class="article-title">Doubling Conversion Rates with Zero Ad Spend</h3>
+                    <p class="article-excerpt">A deep dive into our CRO methodology that helped AI startups double their conversion rates by optimizing existing traffic.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Jun 28, 2026</span>
+                        <span class="article-read">Read &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <h2 class="contact-title">
+            It's Time to<br>
+            <span class="highlight">Launch</span>
+        </h2>
+        <p class="contact-subtitle">Ready to scale your AI product globally? Let's talk.</p>
+        <a href="mailto:hello@rockbase.pro" class="contact-email">&#9993; hello@rockbase.pro</a>
+        <button class="contact-cta">Sign Up &mdash; Get Started</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                        <defs>
+                            <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff6b35"/>
+                                <stop offset="100%" style="stop-color:#ffb347"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M8 32V8h12c4 0 7 2 7 6s-3 6-7 6H12v12H8z" stroke="url(#footerGrad)" stroke-width="2" fill="none"/>
+                        <path d="M22 8l6-4v12l-6-4z" fill="url(#footerGrad)"/>
+                    </svg>
+                    RockBase
+                </div>
+                <p class="footer-desc">The growth cornerstone in the AI era. We scale AI products globally through data-driven strategies and cross-cultural expertise.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">X</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Instagram">Ig</a>
+                    <a href="#" aria-label="YouTube">Yt</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Growth Strategy</a></li>
+                    <li><a href="#services">Influencer Marketing</a></li>
+                    <li><a href="#services">Community Ops</a></li>
+                    <li><a href="#services">TikTok Growth</a></li>
+                    <li><a href="#services">SEO / ASO / GEO</a></li>
+                    <li><a href="#services">CRO</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#studio">Studio</a></li>
+                    <li><a href="#articles">Blog</a></li>
+                    <li><a href="#contact">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@rockbase.pro">hello@rockbase.pro</a></li>
+                    <li><a href="#contact">Book a Call</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copyright">&copy; 2026 RockBase Studio. All rights reserved.</span>
+            <span class="footer-location">&#127760; Global Operations</span>
+        </div>
+    </footer>
+
+    <!-- SERVICE DETAIL SECTIONS -->
+    <section class="service-detail" id="growth-strategy">
+        <div class="service-detail-header">
+            <div class="service-detail-number">01</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Strategy</div>
+                <h2 class="service-detail-title">Overseas Growth Strategies</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>By leveraging our team's extensive experience in global GTM execution, we aim to assist high-potential AI startups in mitigating strategic missteps and compressing the market validation cycle.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>Target Market Positioning</li>
+                    <li>Target Audience Profiling</li>
+                    <li>Product Value Proposition Systematization</li>
+                    <li>Conversion Pathway & Funnel Diagnosis</li>
+                    <li>Actionable Growth Initiatives</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>Our core competency is rooted in a results-oriented strategic capability. We favor a profound comprehension of the product's intrinsic characteristics and commercial objectives, enabling systematic diagnosis across user demographics, functionalities, market dynamics, and conversion pathways.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="influencer-marketing">
+        <div class="service-detail-header">
+            <div class="service-detail-number">02</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Content</div>
+                <h2 class="service-detail-title">Influencer Marketing</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>Every influencer campaign constitutes a quantifiable, replicable, and scalable growth experiment. Our singular overarching objective is to transmute every client investment into a sustainable growth trajectory.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>High-affinity influencer matching across global platforms</li>
+                    <li>Localized campaigns within strategic markets</li>
+                    <li>Platform trend monitoring & creative strategy</li>
+                    <li>End-to-end collaboration management & performance post-mortems</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>Objective-Driven Reverse Engineering based on KPIs (impressions, registration, conversion, CAC, ROI). Full-Funnel Closed-Loop from creative strategy to continuous iterative optimization. Real-Time Trend Optimization leveraging platform analytics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="community-ops">
+        <div class="service-detail-header">
+            <div class="service-detail-number">03</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Content</div>
+                <h2 class="service-detail-title">Community Operations</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>Reddit and other community platforms have become critical discovery channels for AI products. Authentic community engagement drives organic trust and sustainable user acquisition.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>Content Planning & Publishing aligned with trending topics</li>
+                    <li>Diversified Content Formats (text, images, short-form video)</li>
+                    <li>Cross-platform compatibility and scheduling</li>
+                    <li>Data Tracking & Optimization with weekly/monthly reporting</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>End-to-end overseas social media operation services from account establishment to content calendar planning, trend tracking, and creative strategizing — ensuring high frequency and quality brand exposure across major global platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="tiktok-growth">
+        <div class="service-detail-header">
+            <div class="service-detail-number">04</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Content</div>
+                <h2 class="service-detail-title">TikTok Growth</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>On short-video platforms such as TikTok, UGC has emerged as a mature and efficient pathway for organic growth, for which we provide comprehensive, end-to-end UGC strategic and executive services.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>Competitor & Benchmark Account Analysis</li>
+                    <li>Differentiated Positioning Design</li>
+                    <li>Viral Content Strategy Formulation</li>
+                    <li>Matrix Account and Content Execution</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>Systematic research on UGC accounts within the same industry vertical to distill effective growth models. Unique content orientations and character persona frameworks based on market gaps and brand advantages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="seo">
+        <div class="service-detail-header">
+            <div class="service-detail-number">05</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Search</div>
+                <h2 class="service-detail-title">SEO</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>Organic search remains the highest-ROI channel for AI products. Technical excellence combined with content strategy builds sustainable, compounding traffic that outlasts any paid campaign.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>SEO Consulting & Site-wide Diagnostics</li>
+                    <li>Website Construction & Migration</li>
+                    <li>Technical SEO Optimization</li>
+                    <li>SEO Content Optimization & Silo Structures</li>
+                    <li>Multilingual Optimization</li>
+                    <li>Periodic Weekly Consultations & Reporting</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>Comprehensive site-wide diagnostics encompassing technical, content, and structural dimensions. Original copywriting that reconciles readability with SEO standards, plus professional training to cultivate long-term internal content growth capabilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="aso">
+        <div class="service-detail-header">
+            <div class="service-detail-number">06</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Search</div>
+                <h2 class="service-detail-title">ASO</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>App Store Optimization is critical for AI mobile products. Keyword ranking enhancement, organic download acquisition, and review management directly impact discoverability and conversion.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>Keyword Research & Strategic Mapping</li>
+                    <li>App Titles, Subtitles & Metadata Optimization</li>
+                    <li>A/B Testing Support (PPO & Listing Experiments)</li>
+                    <li>Icon & Screenshot Strategy</li>
+                    <li>Periodic ASO Performance Analytics</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>Substantially elevated visibility within app store search results through core and long-tail keyword targeting. Sustainable organic download growth via search visibility and landing page conversion optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="geo">
+        <div class="service-detail-header">
+            <div class="service-detail-number">07</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Search</div>
+                <h2 class="service-detail-title">GEO</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>As users increasingly rely on AI platforms for instantaneous responses, traditional SEO has become insufficient. GEO ensures high-quality brand presence within generative AI outputs, augmenting both exposure and credibility.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>AI Content Optimization</li>
+                    <li>Schema Markup & Structured Data</li>
+                    <li>Technical Optimization for AI Crawlers</li>
+                    <li>Merchant Information Management</li>
+                    <li>AI Long-tail Keyword Research</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>Engineering conversational and structured content aligned with generative engine preferences. Precise structured data annotation to facilitate accurate engine comprehension of brand, service, and product information.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="cro">
+        <div class="service-detail-header">
+            <div class="service-detail-number">08</div>
+            <div class="service-detail-title-group">
+                <div class="service-detail-label">Growth Channel</div>
+                <h2 class="service-detail-title">CRO</h2>
+            </div>
+        </div>
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h4>Why It</h4>
+                <p>38% of users terminate engagement due to suboptimal design. 46% evaluate brand credibility based on visual aesthetics. CRO augments revenue directly by optimizing conversion efficiency of existing traffic without additional ad spend.</p>
+            </div>
+            <div class="service-detail-card">
+                <h4>What It</h4>
+                <ul>
+                    <li>User-Centric Value Transmission</li>
+                    <li>Data-Driven Iterative Refinement</li>
+                    <li>A/B Testing & User Feedback Loops</li>
+                    <li>Landing Page & Funnel Optimization</li>
+                </ul>
+            </div>
+            <div class="service-detail-card">
+                <h4>Key Benefit</h4>
+                <p>The fundamental components of high-conversion landing pages are structural clarity and precise articulation of value propositions. We enhance conversion rates at critical touchpoints — registration, acquisition, and inquiry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="section results" id="results">
+        <div class="section-header">
+            <div class="section-label">Results</div>
+            <h2 class="section-title">Proven Impact Across AI Products</h2>
+            <p class="section-desc">Real numbers from real partnerships. Every metric is a story of strategic execution and measurable growth.</p>
+        </div>
+        <div class="results-grid">
+            <div class="result-card reveal">
+                <div class="result-card-image">
+                    <div class="result-card-image-text">AIRTAP</div>
+                </div>
+                <div class="result-card-body">
+                    <div class="result-card-client">AI Smartphone Agent</div>
+                    <h3 class="result-card-title">Airtap: Global Launch Campaign</h3>
+                    <div class="result-card-stats">
+                        <div class="result-stat">
+                            <span class="result-stat-value">50K</span>
+                            <span class="result-stat-label">New Users</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">340%</span>
+                            <span class="result-stat-label">MoM Growth</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">$12</span>
+                            <span class="result-stat-label">Blended CAC</span>
+                        </div>
+                    </div>
+                    <p class="result-card-desc">Strategic TikTok UGC campaign combined with Reddit community seeding drove exponential organic growth. Built a 50-creator matrix across US, UK, and Canada markets, achieving 15M organic impressions in 90 days.</p>
+                </div>
+            </div>
+            <div class="result-card reveal reveal-delay-1">
+                <div class="result-card-image">
+                    <div class="result-card-image-text">LEADDE</div>
+                </div>
+                <div class="result-card-body">
+                    <div class="result-card-client">AI Business Video Platform</div>
+                    <h3 class="result-card-title">Leadde: Enterprise SEO Dominance</h3>
+                    <div class="result-card-stats">
+                        <div class="result-stat">
+                            <span class="result-stat-value">3.2M</span>
+                            <span class="result-stat-label">Monthly Views</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">#1</span>
+                            <span class="result-stat-label">Keyword Rank</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">180%</span>
+                            <span class="result-stat-label">MRR Growth</span>
+                        </div>
+                    </div>
+                    <p class="result-card-desc">Full-funnel SEO + GEO strategy positioned Leadde as the top AI video platform in enterprise search. Implemented silo content architecture and multilingual optimization across 8 markets, capturing Fortune 500 decision-makers.</p>
+                </div>
+            </div>
+            <div class="result-card reveal reveal-delay-2">
+                <div class="result-card-image">
+                    <div class="result-card-image-text">VOMO</div>
+                </div>
+                <div class="result-card-body">
+                    <div class="result-card-client">AI Meeting Recorder</div>
+                    <h3 class="result-card-title">Vomo: Global Influencer Network</h3>
+                    <div class="result-card-stats">
+                        <div class="result-stat">
+                            <span class="result-stat-value">200+</span>
+                            <span class="result-stat-label">Influencers</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">15M</span>
+                            <span class="result-stat-label">Impressions</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">4.8x</span>
+                            <span class="result-stat-label">Campaign ROI</span>
+                        </div>
+                    </div>
+                    <p class="result-card-desc">Localized influencer campaigns across 6 markets (US, EU, JP, KR, LATAM, MENA) established Vomo as the go-to AI transcription tool. Creator matching based on audience affinity scores above 85%.</p>
+                </div>
+            </div>
+            <div class="result-card reveal reveal-delay-3">
+                <div class="result-card-image">
+                    <div class="result-card-image-text">TICNOTE</div>
+                </div>
+                <div class="result-card-body">
+                    <div class="result-card-client">AI Note-Taking Tool</div>
+                    <h3 class="result-card-title">Ticnote: Community-Led Growth</h3>
+                    <div class="result-card-stats">
+                        <div class="result-stat">
+                            <span class="result-stat-value">25K</span>
+                            <span class="result-stat-label">Community Members</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">4.2x</span>
+                            <span class="result-stat-label">Organic Growth</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value">92%</span>
+                            <span class="result-stat-label">Retention Rate</span>
+                        </div>
+                    </div>
+                    <p class="result-card-desc">Built thriving Reddit and Discord communities around productivity workflows. Content strategy focused on authentic use cases and peer recommendations, driving 4.2x organic user growth with 92% monthly retention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="section about" id="about">
+        <div class="section-header">
+            <div class="section-label">About Us</div>
+            <h2 class="section-title">We Are the Growth Cornerstone in the AI Era</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-visual">
+                <div class="about-visual-content">RB</div>
+            </div>
+            <div class="about-content">
+                <p class="about-text">
+                    We collaborate with enterprises across diverse sectors to facilitate the market entry of their high-quality products. However, in the current AI landscape, <strong>new products emerge on a weekly basis</strong>. Features that are proprietary today can become commoditized industry standards tomorrow.
+                </p>
+                <p class="about-text">
+                    Users frequently download applications, engage with them once, and subsequently abandon them. Despite intensive development efforts, products often struggle to achieve necessary market visibility.
+                </p>
+                <p class="about-text">
+                    The fundamental challenge lies in <strong>eliciting emotional resonance</strong> to foster sustained brand preference among the target audience. This is why RockBase exists.
+                </p>
+                <div class="about-values">
+                    <div class="about-value">
+                        <div class="about-value-number">20+</div>
+                        <div class="about-value-label">AI Products Scaled</div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-number">6</div>
+                        <div class="about-value-label">Global Markets</div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-number">500+</div>
+                        <div class="about-value-label">Influencer Network</div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-number">4.5x</div>
+                        <div class="about-value-label">Avg. Client ROI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="section approach" style="background: var(--bg-primary);">
+        <div class="section-header">
+            <div class="section-label">Our Method</div>
+            <h2 class="section-title">How We Work</h2>
+        </div>
+        <div class="approach-grid">
+            <div class="approach-card reveal">
+                <div class="approach-number">01</div>
+                <div class="approach-icon">&#128260;</div>
+                <h3 class="approach-title">Full-Funnel Closed-Loop Optimization</h3>
+                <p class="approach-desc">Beyond mere traffic acquisition, we leverage AI-driven methodologies to rigorously optimize conversion rates and LTV across the entire user lifecycle.</p>
+            </div>
+            <div class="approach-card reveal reveal-delay-1">
+                <div class="approach-number">02</div>
+                <div class="approach-icon">&#127912;</div>
+                <h3 class="approach-title">Algorithm-Driven Virality Engineering</h3>
+                <p class="approach-desc">Transcending traditional influencer brokerage, we utilize deep data mining to decode the underlying structural patterns of viral content, facilitating predictable and reproducible growth.</p>
+            </div>
+            <div class="approach-card reveal reveal-delay-2">
+                <div class="approach-number">03</div>
+                <div class="approach-icon">&#129302;</div>
+                <h3 class="approach-title">AI Native Operational Growth</h3>
+                <p class="approach-desc">We deeply embed AI technologies into our daily workflows of content generation, data analysis, and campaign execution — making us faster, smarter, and more scalable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDIO SECTION -->
+    <section class="section studio" id="studio">
+        <div class="section-header" style="text-align: center;">
+            <div class="section-label" style="justify-content: center;">The Studio</div>
+            <h2 class="section-title" style="max-width: 100%;">Where Growth Meets Craft</h2>
+            <p class="section-desc" style="margin: 1.5rem auto 0;">A global team of strategists, creators, data scientists, and engineers united by one mission: making AI products impossible to ignore.</p>
+        </div>
+        <div class="studio-grid">
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128104;</div>
+                <span class="studio-item-label">Growth Strategy</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128105;</div>
+                <span class="studio-item-label">Content Creation</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128187;</div>
+                <span class="studio-item-label">Data Science</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128200;</div>
+                <span class="studio-item-label">Performance</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#127760;</div>
+                <span class="studio-item-label">Localization</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128161;</div>
+                <span class="studio-item-label">Creative</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128241;</div>
+                <span class="studio-item-label">Influencer Ops</span>
+            </div>
+            <div class="studio-item">
+                <div class="studio-item-icon">&#128295;</div>
+                <span class="studio-item-label">Engineering</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruitment -->
+    <section class="section" style="background: var(--bg-secondary); text-align: center;">
+        <div class="section-header" style="text-align: center;">
+            <div class="section-label" style="justify-content: center;">Join Us</div>
+            <h2 class="section-title" style="max-width: 100%;">We Are Hiring</h2>
+            <p class="section-desc" style="margin: 1.5rem auto 0;">Passionate about AI and growth? We are always looking for exceptional talent to join our global team.</p>
+        </div>
+        <button class="contact-cta" style="margin-top: 2rem;">View Open Positions</button>
+    </section>
+
+    <script>
+        // Particle Canvas
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0, mouseY = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    this.x -= dx * 0.01;
+                    this.y -= dy * 0.01;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 107, 53, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(255, 107, 53, ${0.1 * (1 - dist / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            const glow = document.getElementById('cursorGlow');
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Horizontal scroll drag
+        const casesScroll = document.getElementById('casesScroll');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        casesScroll.addEventListener('mousedown', (e) => {
+            isDown = true;
+            casesScroll.style.cursor = 'grabbing';
+            startX = e.pageX - casesScroll.offsetLeft;
+            scrollLeft = casesScroll.scrollLeft;
+        });
+        casesScroll.addEventListener('mouseleave', () => {
+            isDown = false;
+            casesScroll.style.cursor = 'grab';
+        });
+        casesScroll.addEventListener('mouseup', () => {
+            isDown = false;
+            casesScroll.style.cursor = 'grab';
+        });
+        casesScroll.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - casesScroll.offsetLeft;
+            const walk = (x - startX) * 2;
+            casesScroll.scrollLeft = scrollLeft - walk;
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
+            navLinks.style.padding = '2rem';
+            navLinks.style.backdropFilter = 'blur(20px)';
+        }
+    </script>
+</body>
 </html>
